@@ -40,7 +40,7 @@ const CreateItem = () => {
 
   const requestToDoList = async () => {
     await axios
-      .get("http://localhost:5000/all/", {
+      .get("https://mern-todo-withauth.herokuapp.com/all/", {
         headers: { "x-auth-token": localStorage.getItem("auth-token") },
       })
       .then((res) => {
@@ -59,7 +59,7 @@ const CreateItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:5000/", text, {
+      .post("https://mern-todo-withauth.herokuapp.com/", text, {
         headers: { "x-auth-token": localStorage.getItem("auth-token") },
       })
       .then((res) =>
@@ -73,7 +73,7 @@ const CreateItem = () => {
 
   const deleteTodo = async (id) => {
     await axios
-      .delete(`http://localhost:5000/${id}`, {
+      .delete(`https://mern-todo-withauth.herokuapp.com/${id}`, {
         headers: { "x-auth-token": localStorage.getItem("auth-token") },
       })
       .then((res) => {
@@ -100,7 +100,7 @@ const CreateItem = () => {
 
     await axios
       .put(
-        `http://localhost:5000/completed`,
+        `https://mern-todo-withauth.herokuapp.com/completed`,
         { id },
         {
           headers: { "x-auth-token": localStorage.getItem("auth-token") },

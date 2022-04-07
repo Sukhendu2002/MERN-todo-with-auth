@@ -24,8 +24,8 @@ const Register = () => {
     e.preventDefault();
     try {
       const newUser = { name, email, password, password2 };
-      await Axios.post("http://localhost:5000/users/register", newUser);
-      const loginRes = await Axios.post("http://localhost:5000/users/login", {
+      await Axios.post("https://mern-todo-withauth.herokuapp.com/users/register", newUser);
+      const loginRes = await Axios.post("https://mern-todo-withauth.herokuapp.com/users/login", {
         email,
         password,
       });
